@@ -19,6 +19,7 @@
       <th scope="col">id</th>
       <th scope="col">Título</th>
       <th scope="col">Reseña</th>
+      <th scope="col">Acciones</th>
     
     </tr>
   </thead>
@@ -28,6 +29,7 @@
       <th scope="row">{{ $book->id}}</th>
       <td>{{ $book->title}}</td>
       <td>{{ $book->description}}</td>
+      <td><a class="btn btn-info" href="{{ route('books.edit', $book->id) }}">Editar</a>
      
     </tr>
 
