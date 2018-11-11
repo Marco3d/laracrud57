@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Book;
 use Illuminate\Http\Request;
+use App\Http\Requests\StoreRequest;
+
+
 use Session;
 
 
@@ -38,13 +41,9 @@ class BookController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreRequest $request)
     {
-       $request->validate([
-            'title' => 'required',
-            'description' => 'required',
-        ]);
-
+       
         Book::create($request->all());
 
        

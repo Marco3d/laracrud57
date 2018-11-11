@@ -16,13 +16,19 @@
         <div class="col-md-12">
             <div class="form-group">
                 <strong>Titulo:</strong>
-                <input type="text" name="title" class="form-control" placeholder="Título del Libro">
+                <input type="text" name="title" class="form-control" placeholder="Título del Libro" value="{{ old('title') }}" >
+                 @if ($errors->has('title'))
+                   <strong class="text-danger" >{{ $errors->first('title') }}</strong>
+                 @endif
             </div>
         </div>
         <div class="col-md-12">
             <div class="form-group">
                 <strong>Descripción:</strong>
-                <textarea class="form-control"  name="description" placeholder="Reseña"></textarea>
+                <textarea class="form-control"  name="description" placeholder="Reseña">{{ old('description') }}</textarea>
+                 @if ($errors->has('description'))
+                   <strong class="text-danger" >{{ $errors->first('description') }}</strong>
+                 @endif
             </div>
         </div>
         <div class="col-md-12 text-center">
